@@ -6,6 +6,7 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -32,6 +33,7 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('password')
                     ->label('Password')
                     ->password()
+                    ->revealable(true)
                     ->required(),
                 Forms\Components\Select::make('role_id')
                     ->label('Role')
@@ -113,5 +115,12 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
+    }
+
+    public function toDatabase(User $notifiable): array
+    {
+        return Notification::make()
+            ->title('User Saved Successfully')
+            ->getDatabaseMessage();
     }
 }
