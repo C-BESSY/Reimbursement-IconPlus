@@ -59,7 +59,11 @@ class ReimbursementFormResource extends Resource
                         ->schema([
                             Select::make('user_id')
                                 ->label('Pake Duid Siapaa?')
-                                ->options([auth()->id() => auth()->user()->name])
+                                ->relationship('user', 'name', function (Builder $query) {
+                                    if (!static::isSuperAdmin()) {
+                                        $query->where('id', auth()->user()->id);
+                                    }
+                                })
                                 ->required(),
                             DatePicker::make('date')
                                 ->label('Kapan?')
