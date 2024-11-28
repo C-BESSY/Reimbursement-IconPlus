@@ -33,7 +33,8 @@ class UserResource extends Resource
                     ->label('Password')
                     ->password()
                     ->revealable(true)
-                    ->required(),
+                    ->disabled(fn($livewire) => !auth()->user()->is($livewire->record))
+                    ->required(fn($livewire) => $livewire instanceof Pages\CreateUser),
                 Forms\Components\Select::make('role_id')
                     ->label('Role')
                     ->relationship('role', 'Role')
@@ -89,11 +90,7 @@ class UserResource extends Resource
     {
         $user = auth()->user();
 
-        if ($user && $user->role && $user->role->Role === 'Super Admin') {
-            return true;
-        }
-
-        return false;
+        return $user && ($user->role->Role === 'Super Admin' || $user->id === $record->id);
     }
 
     public static function canDelete($record): bool
