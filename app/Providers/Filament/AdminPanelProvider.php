@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Widgets\SummaryWidget;
+use App\Livewire\CategoryRecapWidget;
 use App\Livewire\ReimbursementAmountWidget;
 use App\Livewire\ReimbursementChartWidget;
 use Filament\Http\Middleware\Authenticate;
@@ -63,6 +64,7 @@ class AdminPanelProvider extends PanelProvider
                 SummaryWidget::class,
                 ReimbursementChartWidget::class,
                 ReimbursementAmountWidget::class,
+                CategoryRecapWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
