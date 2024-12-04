@@ -24,6 +24,7 @@ use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -84,9 +85,28 @@ class ReimbursementFormResource extends Resource
                                 ->columnSpanFull(),
                             TextInput::make('title')
                                 ->label('Keperluan apa?')
-                                ->columnSpanFull()
                                 ->placeholder('Tujuan Pengeluaran')
                                 ->required(),
+                            Select::make('category')
+                                ->label('Kategori')
+                                ->options([
+                                    'BBM Kendaraan' => 'BBM Kendaraan',
+                                    'Keperluan Umum' => 'Keperluan Umum',
+                                    'Telekomunikasi' => 'Telekomunikasi',
+                                    'Aktivasi' => 'Aktivasi',
+                                    'Pengiriman' => 'Pengiriman',
+                                    'Makanan' => 'Makanan',
+                                    'Renovasi Gedung' => 'Renovasi Gedung',
+                                    'Listrik' => 'Listrik',
+                                    'other' => 'Other (Specify Below)',
+                                ])
+                                ->reactive()
+                                ->required(),
+                            TextInput::make('custom_category')
+                                ->label('Specify Custom Category')
+                                ->columnSpanFull()
+                                ->hint('Fill this if you choose "Other"')
+                                ->hidden(fn($get) => $get('category') !== 'other'),
                         ])->columns(2)->columnSpanFull(),
 
                     Section::make()->schema([
@@ -147,7 +167,7 @@ class ReimbursementFormResource extends Resource
                 'xl' => 3,
             ])
             ->recordUrl(false)
-            ->paginationPageOptions([10, 20, 30, 40, 50])
+            ->paginationPageOptions([12, 30, 45, 60])
             ->filters([
                 TernaryFilter::make('is_paid')->label('Pembayaran')->indicator('Pembayaran'),
                 SelectFilter::make('user_id')->label('User')->options(User::all()->pluck('name', 'id'))
@@ -296,6 +316,9 @@ class ReimbursementFormResource extends Resource
                 ->sortable()
                 ->date(format: 'd/m/Y')
                 ->toggleable(),
+            TextColumn::make('category')
+                ->label('Kategori')
+                ->sortable(),
             ToggleColumn::make('is_paid')
                 ->label('Pembayaran')
                 ->onIcon('heroicon-o-check')

@@ -10,6 +10,9 @@
 
     <table width="100%" style="border-collapse: collapse; margin-bottom: 30px; font-family: Arial, sans-serif;">
         <tr>
+            <p style="font-size: 12px; color: #555; margin: 0; padding: 0;">No. Kuitansi:</p>
+        </tr>
+        <tr>
             <!-- Image Section -->
             <td
                 style="border: 1px solid #ddd; padding: 10px; width: 50%; vertical-align: top; background-color: #f9f9f9;">
@@ -46,7 +49,9 @@
             </td>
 
             <!-- Text Details Section -->
+
             <td style="padding: 15px; width: 50%; vertical-align: top;">
+                <!-- <p style="font-size: 12px; color: #555; margin: 0; padding: 0;">No. Kuitansi:</p> -->
                 @if (!in_array('user', $hiddenCols))
                     <div style="margin-bottom: 10px;">
                         <strong style="font-size: 14px; color: #333;">Name:</strong>
@@ -64,6 +69,12 @@
                     <div style="margin-bottom: 10px;">
                         <strong style="font-size: 14px; color: #333;">Title:</strong>
                         <span style="font-size: 14px; color: #666;">{{ $record->title }}</span>
+                    </div>
+                @endif
+                @if (!in_array('category', $hiddenCols))
+                    <div style="margin-bottom: 10px;">
+                        <strong style="font-size: 14px; color: #333;">Kategori:</strong>
+                        <span style="font-size: 14px; color: #666;">{{ $record->category }}</span>
                     </div>
                 @endif
                 @if (!in_array('price', $hiddenCols))
