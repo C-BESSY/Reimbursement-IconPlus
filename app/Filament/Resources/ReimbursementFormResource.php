@@ -318,6 +318,7 @@ class ReimbursementFormResource extends Resource
                 ->toggleable(),
             TextColumn::make('category')
                 ->label('Kategori')
+                ->toggleable()
                 ->sortable(),
             ToggleColumn::make('is_paid')
                 ->label('Pembayaran')
