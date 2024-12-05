@@ -168,6 +168,7 @@ class ReimbursementFormResource extends Resource
             ])
             ->recordUrl(false)
             ->paginationPageOptions([12, 30, 45, 60])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 TernaryFilter::make('is_paid')->label('Pembayaran')->indicator('Pembayaran'),
                 SelectFilter::make('user_id')->label('User')->options(User::all()->pluck('name', 'id'))
