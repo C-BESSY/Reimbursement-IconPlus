@@ -45,9 +45,30 @@ This project is tailored to meet the needs of the company by:
 
 ## Installation
 
-1. `git clone https://github.com/your-repo/reimbursement-system.git`
-2. `cd reimbursement-system`
-3. `composer install`. Then run `npm install && npm run dev`
+Clone this Repo to your terminal:
+
+```
+git clone https://github.com/your-repo/reimbursement-system.git
+```
+
+Go to the cloned repository and run
+
+```
+cd reimbursement-system
+```
+
+Install dependencies with
+
+```
+composer install
+```
+
+Then run
+
+```
+npm install && npm run dev
+```
+
 4. `cp .env.example .env`
 5. Update your .env file with your database credentials ```DB_DATABASE=your_database
    DB_USERNAME=your_username
