@@ -49,7 +49,11 @@ This project is tailored to meet the needs of the company by:
 2. `cd reimbursement-system`
 3. `composer install`. Then run `npm install && npm run dev`
 4. `cp .env.example .env`
-5. Update your .env file with your database credentials
+5. Update your .env file with your database credentials ```DB_DATABASE=your_database
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+
+```
 6. `php artisan migrate --seed`
 7. `php artisan serve`
 
@@ -84,3 +88,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
