@@ -45,38 +45,55 @@ This project is tailored to meet the needs of the company by:
 
 ## Installation
 
-Clone this Repo to your terminal:
+1. Clone this Repo to your terminal:
 
 ```
 git clone https://github.com/your-repo/reimbursement-system.git
 ```
 
-Go to the cloned repository and run
+2. Go to the cloned repository and run
 
 ```
 cd reimbursement-system
 ```
 
-Install dependencies with
+3. Install dependencies with
 
 ```
 composer install
 ```
 
-Then run
+4. Then run
 
 ```
 npm install && npm run dev
 ```
 
-4. `cp .env.example .env`
-5. Update your .env file with your database credentials ```DB_DATABASE=your_database
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
+5. Copy .env.example to .env
 
 ```
-6. `php artisan migrate --seed`
-7. `php artisan serve`
+cp .env.example .env
+```
+
+6. Update your .env file with your database credentials
+
+```
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+7. Migrate and seed with
+
+```
+php artisan migrate --seed
+```
+
+8. Run
+
+```
+php artisan serve
+```
 
 ### Premium Partners
 
@@ -109,4 +126,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+```
+
 ```
