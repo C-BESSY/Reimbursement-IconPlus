@@ -7,9 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Reimbursement Management System
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project is one of my contributions during my internship at PT ICON+ KP NTT. It is designed to facilitate employees, particularly those responsible for reimbursements, in efficiently recording and managing reimbursement requests.
+
+The Reimbursement Management System aims to simplify the reimbursement process by providing an intuitive platform where employees can submit and categorize their requests, and administrators can track and manage all reimbursements effectively. This system is particularly beneficial for employees in the field to ensure seamless recording and monitoring of their expenses.
+
+This project is tailored to meet the needs of the company by:
+- Ensuring accurate and categorized tracking of reimbursements.
+- Streamlining the process for both employees and super admins.
+- Providing visual insights through widgets and summaries for better financial oversight.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
@@ -19,19 +26,41 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Tech Used
+### Languages & Frameworks
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Backend: Laravel (PHP 8)
+- Frontend: Filament (Laravel Admin Panel)
+- Database: MySQL
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Plugins & Tools
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Filament: For managing admin panel resources and forms.
+- Livewire: For creating interactive components.
+- Chart.js: For rendering dynamic charts in widgets.
+- Tailwind CSS: For UI styling.
+- Composer: For PHP dependency management.
+- NPM: For JavaScript dependency management.
 
-## Laravel Sponsors
+## Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Reimbursement Submission
+- widgets for Displaying Data
+- Role-Based Access Control
+- Flexible Filters
+- Real Time Notifications
+
+
+## Installation
+
+1. ```git clone https://github.com/your-repo/reimbursement-system.git```
+2. ```cd reimbursement-system```
+3. ```composer install```. Then run ```npm install && npm run dev```
+4. ```cp .env.example .env```
+5. Update your .env file with your database credentials
+6. ```php artisan migrate --seed```
+7. ```php artisan serve```
 
 ### Premium Partners
 
