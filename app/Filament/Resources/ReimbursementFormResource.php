@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Exports\ReimbursementsExport;
 use App\Filament\Resources\ReimbursementFormResource\Pages;
 use App\Models\ReimbursementForm;
 use App\Models\User;
@@ -27,6 +28,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ReimbursementFormResource extends Resource
 {
@@ -219,21 +221,11 @@ class ReimbursementFormResource extends Resource
                                 )->stream();
                             }, 'Report Reimburse.pdf');
                         }),
-                    // Tables\Actions\BulkAction::make('Pdf')
-                    //     ->label('Export PDF perSheet')
-                    //     ->color('success')
-                    //     ->icon('heroicon-m-arrow-down-tray')
-                    //     ->openUrlInNewTab()
-                    //     ->deselectRecordsAfterCompletion()
-                    //     ->action(function (Collection $records, $livewire) {
-                    //         $hiddenCols = collect($livewire->toggledTableColumns)
-                    //             ->filter(fn($val) => is_array($val) ? collect($val)->every(fn($arrVal) => !$arrVal) : !$val)->keys()->toArray();
-                    //         return response()->streamDownload(function () use ($records, $hiddenCols) {
-                    //             echo Pdf::loadHTML(
-                    //                 Blade::render('pdfPerSheet', ['records' => $records, 'hiddenCols' => $hiddenCols])
-                    //             )->stream();
-                    //         }, 'Report Reimburse.pdf');
-                    //     }),
+                    Tables\Actions\BulkAction::make('export')
+                        ->label('Export to Excel')
+                        ->action(fn() => Excel::download(new ReimbursementsExport, 'reimbursements.xlsx'))
+                        ->color('success')
+                        ->icon('heroicon-c-table-cells'),
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
