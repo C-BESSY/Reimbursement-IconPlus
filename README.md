@@ -49,7 +49,7 @@ This project is tailored to meet the needs of the company by:
 1. Clone this Repo to your terminal:
 
 ```
-git clone https://github.com/your-repo/reimbursement-system.git
+git clone https://github.com/C-BESSY/Reimbursement-IconPlus.git
 ```
 
 2. Go to the cloned repository and run
