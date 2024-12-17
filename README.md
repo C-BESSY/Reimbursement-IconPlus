@@ -42,6 +42,7 @@ This project is tailored to meet the needs of the company by:
 -   Role-Based Access Control
 -   Flexible Filters
 -   Real Time Notifications
+-   Export Data to Excel
 
 ## Installation
 
@@ -97,29 +98,16 @@ php artisan serve
 
 ## Contact
 
-If you have any questions, critiques, or suggestions, feel free to reach out:
+If you have any questions, critiques, suggestions, or if there is Security Vulnerabilities, feel free to reach out:
 [Charisty](mailto:charistyfirst@gmail.com)
 
-## Security Vulnerabilities
+<!-- ### Note of Thanks -->
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-### Note of Thanks
-
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[WebReinvent](https://webreinvent.com/)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
--   **[Jump24](https://jump24.co.uk)**
--   **[Redberry](https://redberry.international/laravel/)**
--   **[Active Logic](https://activelogic.com)**
--   **[byte5](https://byte5.de)**
--   **[OP.GG](https://op.gg)**
+<!-- -   **[Vehikl](https://vehikl.com/)** -->
+<!-- -   **[Redberry](https://redberry.international/laravel/)** -->
+<!-- -   **[Active Logic](https://activelogic.com)** -->
+<!-- -   **[byte5](https://byte5.de)** -->
 
 ```
-
+GBU😇
 ```
