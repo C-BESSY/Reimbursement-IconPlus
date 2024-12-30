@@ -41,6 +41,7 @@ class AdminPanelProvider extends PanelProvider
                 'warning' => '#FFC107',   // Yellow
                 'success' => '#1AD30A',   // Light green
             ])
+            ->brandLogo(fn() => view('filament.brandLogo'))
             ->plugins([
                 TableLayoutTogglePlugin::make()
                     ->setDefaultLayout('grid')

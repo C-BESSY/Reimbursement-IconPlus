@@ -1,0 +1,15 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.logo-container img {
+    max-width: 70%;
+    /* max-height: 70%; */
+    object-fit: contain;
+}
